@@ -1,0 +1,10 @@
+{
+  "package": "@huggingface/transformers",
+  "version": "4.3.1",
+  "source": "https://registry.npmjs.org/@huggingface/transformers/-/transformers-4.3.1.tgz",
+  "files": {
+    "TRANSFORMERS-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "ort-wasm-simd-threaded.jsep.mjs": "c2f80e915e9df63289788a99d434d8c4e00e64e9c1f030f4b80b022458dd2c99",
+    "transformers.min.js": "8d6716d9086f57c30a4bf367dba61b887593573c770c454465e8019b2703e743"
+  }
+}
