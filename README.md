@@ -6,7 +6,7 @@ Private, browser-based search over your text and Markdown documents. Find exact 
 
 ## Run
 
-Node 24 or newer. No package installation or API key required.
+Node 24 or newer. No package installation or API key required. The first build downloads a pinned browser runtime from jsDelivr and verifies its SHA-256 checksum.
 
 ```sh
 npm test
@@ -30,7 +30,7 @@ Documents live in tab memory only. Closing or refreshing clears them. Identical 
 ## Implementation
 
 - Original BM25-style lexical ranking and reciprocal-rank fusion.
-- Transformers.js **4.3.1**, vendored browser distribution with SHA-256 manifest and Apache-2.0 license.
+- Transformers.js **4.3.1**, browser distribution fetched at build time with a pinned SHA-256 manifest and Apache-2.0 license.
 - Mixedbread `mxbai-embed-xsmall-v1`, q8, pinned revision `e6ac24e5d6efb8782b59de1647b3ececb4ece94e`.
 - Mean-pooled, normalized embeddings in a dedicated Web Worker.
 - WebGPU when model loading succeeds; WebAssembly fallback when GPU loading fails.
@@ -60,7 +60,7 @@ The full machine-readable run is in `chrome-webgpu-benchmark.json`. Run `npm run
 
 Document text and queries stay in the tab. No telemetry or document-upload endpoint exists. Optional AI initialization contacts Hugging Face/model delivery hosts and jsDelivr for model/runtime assets; those services see ordinary connection information. Models may be cached. The app shell is not an offline PWA, and offline startup is not promised.
 
-The browser distribution is vendored to avoid unnecessary native/server dependencies. Build verifies its recorded checksums, which protect against accidental changes but are not a third-party security audit. The runtime still downloads its pinned WASM assets. A compromised host, device or extension is outside the app's protections.
+The browser-only distribution avoids unnecessary native/server dependencies. The minified library is generated locally by the first build and excluded from Git; build checks its pinned checksum. These checks protect against accidental changes but are not a third-party security audit. The runtime still downloads its pinned WASM assets. A compromised host, device or extension is outside the app's protections.
 
 English-first, text and Markdown only. No PDF/OCR, sync, account, automatic truth checking, or generated answers. Semantic retrieval returns nearest passages even for unrelated questions: inspect the evidence. The 700-character chunks are a simple initial heuristic, with no overlap. This is an early implementation, not production security certification.
 
