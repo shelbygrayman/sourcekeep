@@ -1,0 +1,18 @@
+{
+  "name": "sourcekeep",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Private document search with exact source excerpts and verifiable evidence exports.",
+  "scripts": {
+    "dev": "node serve.js",
+    "build": "node build.js",
+    "preview": "node serve.js dist",
+    "test": "node --test core.test.js",
+    "benchmark": "node benchmark.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "license": "MIT"
+}
