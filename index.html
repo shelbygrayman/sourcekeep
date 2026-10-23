@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Find the passage. Keep the proof. Private document search with verifiable evidence exports."><title>Sourcekeep — Find it. Keep the source.</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<a class="skip" href="#search">Skip to search</a>
+<aside>
+  <a class="brand" href="./"><span class="brandmark">s<span>•</span></span> sourcekeep<span class="beta">EARLY ACCESS</span></a>
+  <div class="workspace"><span class="avatar">P</span><div>Personal workspace<small>Only in this tab</small></div><span class="dot"></span></div>
+  <div class="navitem active">⌕ <span>Find a source</span><span class="key">/</span></div>
+  <div class="section-label">YOUR LIBRARY <span id="count">0</span></div>
+  <label class="upload" for="files"><span>＋</span> Add documents<input id="files" type="file" multiple accept=".txt,.md,text/plain,text/markdown"></label>
+  <p class="muted tiny">Text & Markdown · up to 1 MB each</p>
+  <div id="library" class="library"><p class="muted">Your sources will appear here.</p></div>
+  <button id="clear" class="textbutton" disabled>Clear library</button>
+  <div class="aside-bottom"><span class="lock">◇</span><strong>Your words stay yours.</strong><p>Documents stay in this tab. No account, tracking, or document uploads.</p><button id="privacy" class="textbutton">How privacy works ↗</button></div>
+</aside>
+<main>
+  <header><span>WORKSPACE <span class="slash">/</span> Source search</span><span class="local-badge"><i></i> Processing on your device</span></header>
+  <section class="intro"><div class="eyebrow">A LITTLE LESS SEARCHING. A LOT MORE FINDING.</div><h1>Find the thought.<br><em>Keep the source.</em></h1><p>Search your documents. Find the exact passage.<br>Take the evidence with you.</p></section>
+  <section class="search-panel" aria-label="Document search">
+    <form id="search-form"><label for="search" class="sr-only">Search your documents</label><span class="search-icon">⌕</span><input id="search" maxlength="500" placeholder="What are you looking for?" autocomplete="off"><button class="primary" id="search-button">Find sources <span>↗</span></button></form>
+    <div class="search-options"><span id="mode-label">Keyword search · ready</span><button id="enable-ai" class="textbutton">✧ Enable local AI</button></div>
+  </section>
+  <div id="status" class="status" role="status" aria-live="polite">Add your documents, or explore the sample workspace below.</div>
+  <section class="results-section"><div class="section-heading"><h2 id="results-title">Start with something familiar</h2><button id="export" class="textbutton" disabled>Export evidence ↓</button></div>
+    <div id="results"><div class="welcome"><div class="welcome-icon">▤</div><h3>A home for the things you know.</h3><p>Notes, project plans, research, everyday details.<br>Bring them together without sending them away.</p><button id="samples" class="secondary">Explore sample documents <span>→</span></button><small>12 fictional documents. Nothing personal.</small></div></div>
+  </section>
+  <section class="benchmark"><div><div class="eyebrow">SHOW YOUR WORK</div><h3>A search tool you can measure.</h3><p>Run 12 sample questions. See retrieval quality and speed on this device.</p></div><button id="benchmark" class="secondary">Run benchmark ↗</button></section>
+  <div id="benchmark-result" aria-live="polite"></div>
+  <footer><span>Built for curious minds. Designed to keep the receipts.</span><span>Sourcekeep v0.1 · English-first</span></footer>
+</main>
+<dialog id="privacy-dialog"><h2>Private by design. Clear about limits.</h2><p>Your documents and searches are processed in this tab and are not uploaded. Closing or refreshing clears the library.</p><p>Enabling AI downloads model files from Hugging Face and its delivery hosts, and runtime files from jsDelivr. They receive ordinary connection information, but not document text or search queries. Model files may be cached by your browser. The first download needs an internet connection.</p><p>Evidence exports contain your query and selected passages. Review them before sharing. Hashes detect changes; they do not prove truth or authorship.</p><p>English text and Markdown are supported. PDFs, OCR, generated answers, and synchronization are outside this first version. Browser extensions and a compromised device remain outside the app’s protection.</p><form method="dialog"><button class="primary">Got it</button></form></dialog>
+<dialog id="ai-dialog"><h2>Search by meaning, on your device.</h2><p>Download the quantized Mixedbread embedding model from Hugging Face (roughly 25 MB of weights, plus runtime files). It runs locally using WebGPU or a CPU fallback.</p><p>Model loading and indexing can take time. Keyword search remains available if the model cannot run. Meaning-based matches are suggestions, not confidence scores.</p><div class="dialog-actions"><button id="ai-cancel" class="secondary">Keep keyword search</button><button id="ai-confirm" class="primary">Download & enable</button></div></dialog>
+<script type="module" src="./app.js"></script></body></html>
