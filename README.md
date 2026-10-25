@@ -1,5 +1,7 @@
 # Sourcekeep
 
+[Validation and benchmarks](BENCHMARKS.md) · [Changelog](CHANGELOG.md) · **[Live demo](https://shelbygrayman.github.io/sourcekeep/)**
+
 **Find the thought. Keep the source.**
 
 Private, browser-based search over your text and Markdown documents. Find exact passages and export a verifiable evidence bundle. Keyword search works immediately; optional on-device embeddings add meaning-based retrieval.
